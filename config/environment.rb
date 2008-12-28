@@ -65,9 +65,9 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
   
-  config.gem "mbleigh-acts-as-taggable-on", :source => "http://gems.github.com", :lib => "acts-as-taggable-on" 
+  #config.gem "mbleigh-acts-as-taggable-on", :source => "http://gems.github.com", :lib => "acts-as-taggable-on" 
 end
 
 #gem 'mislav-will_paginate', '~> 2.2'
-require 'will_paginate'
+#require 'will_paginate'
 
