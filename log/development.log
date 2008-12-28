@@ -514,3 +514,4 @@ Rendering citas/edit
 Rendered citas/_main_menu (0.8ms)
 Completed in 47ms (View: 29, DB: 1) | 200 OK [http://localhost/citas/513/edit]
 ** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
