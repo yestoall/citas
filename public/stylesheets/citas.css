@@ -1,0 +1,703 @@
+
+/* ------------- data -----------------
+
+	color_rollover: #FFD200
+
+   ----------------------------------*/
+
+body 
+{ 
+	background-color: #fff; 
+	color: #333; 
+	margin: 0px;
+}
+
+body, p, ol, ul, td 
+{
+	font-family: helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+a, a:visited, a:hover { color: #000;}
+
+/* ------------ wrappers --------------- */
+
+#headerwrapper
+{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	margin: 0px auto;
+	padding: 30px 0px 0px 0px;
+	background-color: #EEE;
+	background-image: url("../images/rayas_blanco.gif");
+	color: #000;
+	z-index: 9999;
+}
+
+#contentwrapper
+{
+	width: 100%;
+	margin: 0px;
+	padding: 150px 0px 30px 0px;
+}
+
+#footerwrapper
+{
+	width: 100%;
+	margin: 0px;
+	padding: 20px 0px 20px 0px;
+	background-color: #FFF;
+	color: #000;
+}
+
+/* ------------ header --------------- */
+
+#header
+{
+	min-width: 400px;
+	max-width: 900px;
+	width: 80%;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+	#header h1
+	{
+		padding: 0px;
+		font-size: 42px;
+		letter-spacing: -2px;
+		margin: 0px;
+	}
+
+	#header p
+	{
+		padding: 6px 0px 6px 0px;
+		font-size: 25px;
+		margin: 0px;
+	}
+
+/* ------------ content --------------- */
+
+#content
+{
+	min-width: 400px;
+	max-width: 900px;
+	width: 80%;
+	margin: 0px auto;
+	padding: 0px;
+	background-image: none;
+	background-color: #FFF;
+}
+
+	#content h1
+	{
+		display: inline;
+		float: left;
+		font-family: helvetica;
+		font-size: 24px;
+		letter-spacing: -1px;
+		color: #000;
+		padding: 10px 0px 0px 0px;
+		margin: 0px auto 5px auto;
+	}
+
+	#content .btn_image a
+	{
+		margin-left: -5px;
+	}
+
+	#content .boton
+	{
+		background-color: #222;	
+		color: #F00;
+		font-size: 20px;
+		padding: 20px;
+	}
+
+	#content .boton a, #content .boton a:visited
+	{ 
+		color: #FFF;
+		text-decoration: none;
+		padding: 30px;
+	}
+	
+		#content .boton a:hover 
+		{ 
+			color: #000; 
+			background-color: #FFD200; 
+			padding: 20px;
+		}
+
+/* ------------ footer --------------- */
+
+#footer
+{
+	min-width: 400px;
+	max-width: 900px;
+	width: 80%;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+	#footer p
+	{
+		margin: 0px;
+		padding: 10px 2px 0px 0px;
+		font-size: 11px;
+		color: #000;
+	}
+
+	#footer a
+	{
+		text-decoration: none;
+		border-bottom: 1px dotted #000;
+	}
+
+		#footer a:hover
+		{
+			color: #FFD200;
+			background-color: #000;
+			border-bottom: 0px;
+		}
+
+/* ------------ barra top --------------- */
+
+#barra_top
+{
+	width: 100%;
+	height: 10px;
+	background-color: #FFF;
+}
+
+/* ------------ navigation bar --------------- */
+
+#navbar
+{
+	min-width: 400px;
+	max-width: 900px;
+	width: 80%;
+	margin: 20px auto 0px auto;
+}
+
+.nav_btn 
+{
+	font-size: 14px;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	vertical-align: middle;
+	display: -moz-inline-box;
+	display: inline-block;
+	text-align: center;
+	color: #888;
+	background: #DDD;
+	padding: 6px 12px 2px 12px;
+	border-bottom: 1px dotted #CCC;
+}
+	.nav_btn:hover 
+	{
+		color: #000;
+	}
+
+	.nav_btn_no
+	{
+		font-size: 14px;
+		outline: none;
+		border: none;
+		text-decoration: none;
+		cursor: pointer;
+		white-space: nowrap;
+		vertical-align: middle;
+		display: -moz-inline-box;
+		display: inline-block;
+		text-align: center;
+		color: #000;
+		background: #FFF;
+		padding: 6px 12px 2px 12px;
+		border-bottom: 1px dotted #FFF;
+	}
+
+	.nav_btn_no td
+	{
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.nav_btn td
+	{
+		font-size: 14px;
+		color: #999;
+	}
+		.nav_btn td:hover
+		{
+			color: #000;
+		}
+
+/* ------------ cita listado --------------- */
+
+.cita_listado
+{
+	color: #FFF;
+	font-family: helvetica;
+	padding: 10px 0px 10px 0px;
+	margin: 30px 0px 0px 0px;
+	background-color: #020202;
+}
+
+	.cita_listado .texto
+	{
+		font-family: georgia, helvetica;
+		font-size: 20px;
+		line-height: 20px;
+		font-style: italic;
+		padding: 6px 20px 0px 20px;;
+		color: #FFF;
+	}
+
+	.cita_listado .autor
+	{
+		font-family: georgia, helvetica;
+		font-size: 14px;
+		font-style: italic;
+		color: #666;
+		padding: 10px 20px 6px 20px;;
+	}
+
+	.cita_listado .tags
+	{
+		font-size: 14px;
+		color: #FFF;
+		padding: 10px 20px 8px 20px;;
+	}
+	
+		.cita_listado .tags a
+		{
+			text-decoration: none;
+		}
+	
+			.cita_listado .tags a:hover
+			{
+				border: 1px dotted #FFD200;
+			}
+
+	.cita_listado .subida_por
+	{
+		border-top: 1px dotted #666;
+		font-family: helvetica;
+		font-size: 12px;
+		color: #FFF;
+		padding: 16px 20px 8px 20px;;
+	}
+
+/* ------------ botones --------------- */
+
+.botones
+{
+	width: 100%;
+	text-align: right;
+}
+
+.cita_btn
+{
+	font-size: 12px;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	vertical-align: middle;
+	display: -moz-inline-box;
+	display: inline-block;
+	text-align: center;
+	background: #000;
+	color: #666;
+	padding: 1px 8px 1px 8px;
+	border-top: 1px dotted #333;
+}
+	.cita_btn:visited
+	{
+		color: #666;
+	}
+	.cita_btn:hover
+	{
+		background-color: #000;
+		color: #FFD200;
+		border-top: 1px dotted #000;
+	}
+	.cita_btn td
+	{
+		width: 3em;
+	}
+	
+/* ------------ formularios --------------- */
+
+#form_separator
+{
+	margin: 0px 0px 20px 0px;
+	width: 100%;
+	border-top: 2px solid #999;
+}
+
+input.autor
+{
+	font-family: georgia, helvetica;
+	font-size: 16px;
+	font-style: italic;
+	border : 0 none #000;
+	color: #FFF;
+	background-color: #000;
+	margin: 0px;
+	vertical-align: top;
+	padding: 7px 6px 6px 6px;
+	height: 20px;
+	width: 100%;
+	border-bottom: 1px dotted #000;
+}
+	input.autor:focus
+	{
+		background-color: #FFD200;
+		color: #000;
+	}
+
+input.tags
+{
+	font-family: helvetica;
+	font-size: 16px;
+	border: 0 none #000;
+	color: #FFF;
+	background-color: #000;
+	margin: 0px;
+	vertical-align: top;
+	padding: 7px 6px 1px 6px;
+	height: 20px;
+	width: 100%;
+	border-bottom: 1px dotted #000;
+}
+	input.tags:focus
+	{
+		background-color: #FFD200;
+		color: #000;
+	}
+
+input.login
+{
+	font-family: helvetica;
+	font-size: 16px;
+	border : 0 none #000;
+	color: #FFF;
+	background-color: #000;
+	margin: 0px;
+	vertical-align: top;
+	padding: 7px 6px 1px 6px;
+	height: 20px;
+	border-bottom: 1px dotted #000;
+}
+	input.login:focus
+	{
+		background-color: #FFD200;
+		color: #000;
+	}
+
+input.boton_link
+{
+	height: 30px;
+	font-family: helvetica, arial;
+	font-size: 18px;
+	margin: 12px 0 10px 0;
+}
+
+textarea.cita
+{
+	font-family: georgia, helvetica;
+	font-size: 20px;
+	line-height: 20px;
+	font-style: italic;
+	background-color: #000;
+	color: #FFF;
+	border: 0 none #000;
+	margin: 0px;
+	vertical-align: top;
+	padding: 7px 6px 6px 6px;
+	height: 120px;
+	width: 100%;
+	border-bottom: 1px dotted #000;
+}
+	textarea.cita:focus
+	{
+		background-color: #FFD200;
+		color: #000;
+	}
+
+label
+{
+	font-size: 16px;
+	color: #000;
+}
+
+/* ------------ tabla usuarios --------------- */
+
+table.usuarios
+{
+	width: 100%;
+	border: 0px;
+	margin: 6px 0px 0px 0px;
+	padding: 10px 10px 15px 10px;
+	background-color: #EEE;
+	border-spacing: 0px;
+}
+
+	table.usuarios th.header 
+	{ 
+	    background-image: url(../images/table_bg.gif);     
+	    cursor: pointer; 
+	    font-weight: bold; 
+	    background-repeat: no-repeat; 
+	    background-position: center left; 
+	    padding-left: 20px; 
+	    margin-left: -1px; 
+	}
+
+		table.usuarios th
+		{
+			background: #CCC;
+			color: #000;
+			font-size: 14px;
+			padding: 5px 10px 2px 10px;
+			text-align: left;
+			border-right: 1px dotted #999;
+		}
+
+		table.usuarios th.headerSortDown 
+		{ 
+		    background-image: url(../images/table_desc.gif); 
+		    background-color: #FFD200; 
+		}
+
+		table.usuarios th.headerSortUp 
+		{ 
+		    background-image: url(../images/table_asc.gif); 
+		    background-color: #FFD200; 
+		}
+
+	table.usuarios td
+	{
+		padding: 4px 10px 2px 10px;
+		font-size: 14px;
+		text-align: left;
+		white-space: nowrap;
+		border-bottom: 1px dotted #CCC;
+		border-right: 1px dotted #CCC;
+	}
+
+		table.usuarios td.opciones
+		{
+			width: 100px;
+			min-width: 100px;
+			color: #000;
+			white-space: nowrap;
+			border: 0px;
+		}
+
+/* ------------ otros --------------- */
+
+.clear
+{
+	clear: both;
+}
+
+/* ------------ botones imagen --------------- */
+
+.menu_flotante
+{
+	font-size: 16px;
+}
+
+.menu_flotante a
+{
+	background: #DDD;
+	padding: 6px;
+	text-decoration: none;
+}
+
+.menu_flotante a:hover
+{
+	background: #000;
+	color: #FFD200;
+	padding: 6px;
+	text-decoration: none;
+}
+
+.edit_cita
+{
+	background: #FFF;
+}
+
+/* ----------- botones-bar ------------ */
+
+.botones-bar 
+{
+	font-size: 18px;
+	color: #CCC;
+}
+
+	.botones-bar a 
+	{
+		text-decoration: none;
+		color: #FFD200;
+		background: #000;
+		padding: 7px 8px 4px 8px;
+	}
+
+		.botones-bar a:hover 
+		{
+			background-color: #FFD200;
+			color: #000;
+		}
+
+/* ----------- botones-bar ------------ */
+
+.botones-form 
+{
+	font-size: 14px;
+	color: #CCC;
+}
+
+	.botones-form a 
+	{
+		text-decoration: none;
+		color: #000;
+		background: #CCC;
+		padding: 4px 6px 1px 6px;
+	}
+
+		.botones-form a:hover 
+		{
+			background-color: #FFD200;
+			color: #000;
+		}
+
+/* ------------ pagination --------------- */
+
+.pagination
+{
+	font-size: 14px;
+}
+
+	.pagination a
+	{
+		background: #DDD;
+		text-decoration: none;
+		padding: 6px 10px 4px 10px;
+	}
+
+		.pagination a:hover
+		{
+			background: #000;
+			color: #FFD200;
+		}
+
+/* ------------ listado de tags --------------- */
+
+.listado_tags
+{
+	font-size: 16px;
+	line-height: 30px;	
+}
+
+	.listado_tags a
+	{
+		background: #CCC;
+		padding: 4px;
+		text-decoration: none;
+		font-size: 16px;
+	}
+
+		.listado_tags a:hover
+		{
+			background: #000;
+			color: #FFD200;
+		}
+
+/* ------------ varios --------------- */
+
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+h2
+{
+	font-size: 20px;
+	color: #000;
+	background: #FFD200;
+}
+
+/*-------------- botones redondeados --------------*/
+
+a.rounded, .button 
+{
+	outline: none;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	vertical-align: middle; /* or top */
+	display: -moz-inline-box;
+	display: inline-block;
+	overflow: visible; /* IE6 form button fix */
+}
+.button 
+{
+	font-size: 16px;
+	color: #FFD200;
+	background-color: #000;
+	padding: 6px 8px 5px 8px;
+}
+.button:hover 
+{
+	color: #000;
+	background-color: #FFD200;
+}
+

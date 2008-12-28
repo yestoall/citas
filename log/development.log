@@ -1,0 +1,138 @@
+# Logfile created on Sat Dec 20 16:59:47 +0100 2008** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-20 17:03:47) [GET]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCita Load (9.1ms)[0m   [0mSELECT * FROM "citas" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "citas" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "citas" [0m
+Rendering template within layouts/application
+Rendering citas/index
+Rendered citas/_main_menu (2.2ms)
+Completed in 253ms (View: 63, DB: 11) | 200 OK [http://localhost/]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-21 20:29:11) [GET]
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-12-21 20:29:12) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_main_menu (0.9ms)
+Completed in 36ms (View: 26, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-12-21 20:29:19) [POST]
+  Parameters: {"commit"=>"Entrar »", "authenticity_token"=>"e918c159f1f33ad0e4d6db06b8ca8bed2710c62b", "login"=>"nacho", "password"=>"nakho"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'nacho') LIMIT 1[0m
+Redirected to /
+Completed in 97ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-21 20:29:19) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCita Load (12.3ms)[0m   [0;1mSELECT * FROM "citas" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "citas" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "citas" [0m
+Rendering template within layouts/application
+Rendering citas/index
+Rendered citas/_main_menu (2.7ms)
+Completed in 145ms (View: 57, DB: 14) | 200 OK [http://localhost/]
+
+
+Processing CitasController#new (for 127.0.0.1 at 2008-12-21 20:29:24) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering citas/new
+  [4;36;1mTag Load (0.9ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Cita') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (20.2ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' LEFT OUTER JOIN citas ON citas.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Cita') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 ORDER BY name[0m
+Rendered citas/_main_menu (2.1ms)
+Completed in 187ms (View: 101, DB: 22) | 200 OK [http://localhost/citas/new]
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-21 20:29:27) [GET]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCita Load (7.3ms)[0m   [0mSELECT * FROM "citas" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "citas" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "citas" [0m
+Rendering template within layouts/application
+Rendering citas/index
+Rendered citas/_main_menu (2.0ms)
+Completed in 125ms (View: 48, DB: 9) | 200 OK [http://localhost/citas]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-28 13:14:24) [GET]
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-12-28 13:14:24) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_main_menu (0.4ms)
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-12-28 13:14:29) [POST]
+  Parameters: {"commit"=>"Entrar »", "authenticity_token"=>"154e99141eb44517ef6a4b9496cc89bc2a08e265", "login"=>"nacho", "password"=>"nakho"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'nacho') LIMIT 1[0m
+Redirected to /
+Completed in 65ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-28 13:14:29) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCita Load (18.4ms)[0m   [0;1mSELECT * FROM "citas" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "citas" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "citas" [0m
+Rendering template within layouts/application
+Rendering citas/index
+Rendered citas/_main_menu (1.0ms)
+Completed in 84ms (View: 22, DB: 19) | 200 OK [http://localhost/]
+
+
+Processing CitasController#new (for 127.0.0.1 at 2008-12-28 13:14:32) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering citas/new
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Cita') AND (context = 'tags')) [0m
+  [4;35;1mTag Load (8.7ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' LEFT OUTER JOIN citas ON citas.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Cita') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 ORDER BY name[0m
+Rendered citas/_main_menu (0.8ms)
+Completed in 57ms (View: 30, DB: 10) | 200 OK [http://localhost/citas/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-12-28 13:14:34) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Rendered users/_main_menu (0.9ms)
+Completed in 31ms (View: 17, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing CitasController#index (for 127.0.0.1 at 2008-12-28 13:14:38) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCita Load (5.6ms)[0m   [0mSELECT * FROM "citas" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "citas" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "citas" [0m
+Rendering template within layouts/application
+Rendering citas/index
+Rendered citas/_main_menu (1.0ms)
+Completed in 117ms (View: 17, DB: 6) | 200 OK [http://localhost/citas]
+
+
+Processing CitasController#new (for 127.0.0.1 at 2008-12-28 13:14:49) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering citas/new
+  [4;35;1mTag Load (0.2ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Cita') AND (context = 'tags')) [0m
+  [4;36;1mTag Load (6.2ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' LEFT OUTER JOIN citas ON citas.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Cita') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 ORDER BY name[0m
+Rendered citas/_main_menu (0.8ms)
+Completed in 46ms (View: 21, DB: 7) | 200 OK [http://localhost/citas/new]

@@ -1,0 +1,44 @@
+
+<% if @opcion == "listado" %>
+	<%= link_to "ver citas", citas_path, :id => "opt_listado", :class => "nav_btn_no {top}" %>
+<% else  %>
+	<%= link_to "ver citas", citas_path, :id => "opt_listado", :class => "nav_btn {top}" %>
+<% end %>
+
+<% if @opcion == "add" %>
+	<%= link_to "+ citas", new_cita_path, :id => "opt_add", :class => "nav_btn_no {top}"  %>
+<% else %>
+	<%= link_to "+ citas", new_cita_path, :id => "opt_add", :class => "nav_btn {top}"  %>
+<% end %>
+
+<% if admin? %>
+	<% if @opcion == "administrar" %>
+		<%= link_to "administrar", users_path, :id => "opt_admin", :class => "nav_btn_no {top}"  %>
+	<% else %>
+		<%= link_to "administrar", users_path, :id => "opt_admin", :class => "nav_btn {top}"  %>
+	<% end %>
+<% end %>
+
+<% if logged_in? %>
+	<%= link_to "salir", logout_path, :id => "opt_salir", :class => "nav_btn {top}"  %>
+<% else %>
+	<%= link_to "entrar", login_path, :id => "opt_entrar", :class => "nav_btn {top}"  %>
+<% end %>
+
+<!--
+<ul>
+	<% if logged_in? %>
+		<li><%= link_to "listado de citas", citas_path, :id => "opt_listado", :class => "rounded {top}" %></li>
+		<li><%= link_to "añadir citas", new_cita_path, :id => "opt_add", :class => "rounded {top}"  %></li>
+		<li>&nbsp;|&nbsp;</li>
+		<li><a href="#">administrar</a></li>
+	<% end %>
+	<li>
+		<% if logged_in? %>
+			<%= link_to "salir	", logout_path, :id => "opt_salir", :class => "{8px}"  %>
+		<% else %>
+			<%= link_to "entrar", login_path, :id => "opt_entrar", :class => "{8px}"  %>
+		<% end %>
+	</li>
+</ul>
+-->

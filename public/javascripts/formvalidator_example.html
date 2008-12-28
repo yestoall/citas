@@ -1,0 +1,68 @@
+<SCRIPT SRC="formvalidator.js" LANGUAGE="javascript" TYPE="text/javascript"></SCRIPT>
+<SCRIPT LANGUAGE="javascript" TYPE="text/javascript">
+var fv = new formvalidator();
+
+// We need to declare the rule per each control we need to check
+fv.AddRule( "CTRL1", "^[a-zA-z\ ]{1,}$", "The edit box CTRL1 shall include letters only." );
+fv.AddRule( "CTRL2", "^[0-9.,]{1,}$", "The edit box CTRL2 shall include letters only." );
+fv.AddRule( "CTRL3", "^[a-zA-z\ ]{1,}$", "The edit box CTRL3 shall include letters only." );
+fv.AddRule( "CTRL4", "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$", "The syntax of the e-mail address in CTRL4 is not correct." );
+
+// Now we declare and customize the member function to display the error messages.
+// The following example just shows the error messages through the standard 
+// built-in function alert();
+// In general one picks up the error messages as follows, then the further visualization
+// can be arbitrarily customized
+fv.outputResponseFn = function()
+{
+    var responseCELL = document.getElementById( "response" );
+    if ( responseCELL != null )
+    {
+        responseCELL.innerHTML = "" ;
+        var responseSTR = "" ;
+        
+        if ( this.errCTRLIDSarray.length > 0 )
+        {
+            for( var ID in this.errCTRLIDSarray )
+            {
+                var key = this.errCTRLIDSarray[ ID ] ;
+                var errMSG = this.errMSGarray[ key ] ;
+                
+                if ( errMSG.length > 0 ) responseSTR += errMSG + "<br>" ;
+            }
+            
+            responseCELL.style.color = "red" ;
+        }
+        else
+        {
+            responseSTR = "All input data are OK !" ;
+            responseCELL.style.color = "green" ;
+        }
+
+        responseCELL.style.backgroundColor = "white" ;
+        responseCELL.innerHTML = responseSTR ;
+        
+        this.flushERRORSarrays() ;
+    }
+}
+</SCRIPT>
+<fieldset style="width:390px;">
+<legend>&nbsp;FORM VALIDATOR&nbsp;</legend>
+<table>
+    <tr><td>CTRL 1 (something in letters)</td><td><input type="edit" id="CTRL1" name="CTRL1" value="blah blah"></td></tr>
+    <tr><td>CTRL 2 (numbers only)</td><td><input type="edit" id="CTRL2" name="CTRL2" value="123"></td></tr>
+    <tr><td>CTRL 3 (another field of letters only)</td><td><input type="edit" id="CTRL3" name="CTRL3" value="123"></td></tr>
+    <tr><td>CTRL 4 (e-mail address)</td><td><input type="edit" id="CTRL4" name="CTRL4" value=""></td></tr>
+    <tr><td style="height:5px;"></td></tr>
+    <tr><td colspan="2">Try changing the values inside the edit boxes and check'em all.</td></tr>
+    <tr><td style="height:5px;"></td></tr>
+    <tr><td colspan="2">
+        <input type="button" 
+               value="Check'em all"
+               onclick="javascript:fv.check();fv.outputResponseFn();">
+        </td>
+    </tr>
+    <tr><td style="height:5px;"></td></tr>
+    <tr><td colspan="2" style="height:24px;padding:3px;" id="response"></td></tr>
+</table>
+</fieldset>

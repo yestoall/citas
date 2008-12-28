@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>citas | <%= yield(:title) || "versión en pruebas" %></title>
+	
+	<%= stylesheet_link_tag 'citas' %>
+
+	<%= javascript_include_tag "jquery" %>
+	<%= javascript_include_tag "jquery.corners" %>
+	<%= javascript_include_tag "jquery.formFocus" %>
+	
+	<%= yield :head %>
+
+	<script type="text/javascript" charset="utf-8">
+	<!--
+	
+		$(document).ready(function(){
+			$(".cita_listado").corners();
+			$(".nav_btn").corners();
+			$(".nav_btn_no").corners();
+			$(".cita_btn").corners();
+			$("titulo_tabla").corners();
+			
+			$('.rounded').corners();
+			
+			<%= yield :jquery_init %>			
+		});
+	-->
+	</script>
+	
+</head>
+<body>
+
+<div id="headerwrapper">
+	<div id="header">
+		<h1>citas</h1>
+		<p>versión en pruebas <%= "para <b>#{current_user.login}</b>" if logged_in? %></p> 
+	</div>
+	<div id="navbar">
+		<%= render :partial => "main_menu", :locals => { :pagina => @opcion } %>
+	</div>	
+	<div id="barra_top"></div>
+</div>
+
+<div id="contentwrapper">
+
+	<div id="content">
+		<h2><%= flash[:notice] %></h2>
+		<h1><%= yield :title %></h1>
+		<%= yield %>
+	</div>
+
+</div>
+
+<div id="footerwrapper">
+	<div id="footer">
+		// sugerencias, quejas y demás <a href="mailto:nacho@yestoall.com">aquí</a>
+	</div>
+</div>
+
+</body>
+</html>

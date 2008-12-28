@@ -1,0 +1,51 @@
+
+<% content_for :head do %>
+	<%= javascript_include_tag "jquery.tablesorter" %>
+<% end %>
+
+<% content_for :jquery_init do %>
+	$("#tabla-usuarios").tablesorter();
+<% end %>
+
+<% @opcion = "admin_usuarios" %>
+
+<% title "Administrar usuarios" %>
+
+<div class="clear"></div>
+
+<table id="tabla-usuarios" class="usuarios">
+	<thead>
+	<tr>
+		<th>usuario</th>
+		<th>email</th>
+		<th>admin</th>
+	</tr>
+	</thead>
+	<tbody>
+	<% for user in @users %>
+		<tr>
+			<td><%= h user.login %></td>
+			<td><%= h user.email %></td>
+			<% if user.admin? %>
+				<td><%= h "si" %></td>
+			<% else %>
+				<td><%= h "no" %></td>
+			<% end %>
+			<td class="opciones">
+				<div class="botones-form">
+					<%= link_to 'ver', user_path(user), :class => "rounded {2px}" %>
+					<%= link_to 'editar', edit_user_path(user), :class => "rounded {2px}" %>
+					<%= link_to 'borrar', user, :class => "rounded {2px}", :confirm => "¿Estas seguro que quieres borrar '#{user.login}'?", :method => :delete %>
+				</div>
+			</td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="form_separator"></div>
+
+<div class="botones-bar">
+	<%= link_to "nuevo usuario", new_user_path, :class => "rounded {4px}" %>	
+</div>
+

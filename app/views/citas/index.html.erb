@@ -1,0 +1,49 @@
+
+<% @opcion = "listado" %>
+
+<% if params[:search] %>
+	<% title "Citas con '#{params[:search]}' (#{@citas_cont})" %>
+<% else %>
+	<% title "Todas las citas (#{@citas_cont})" %>
+<% end %>
+
+<div class="clear"></div>
+
+<% form_tag citas_path, :method => "get" do %>
+	<p>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "search", :name => nil %>
+	</p>
+<% end %>
+
+<br />
+
+<!-- 
+	20Febrero2007
+	http://www.microsiervos.com/archivo/frases-citas/
+-->
+
+<p>
+	<%= will_paginate(@citas) %>
+</p>
+
+<% for cita in @citas %>
+	
+	<div class="cita_listado {top bottom-left}">
+		<div class="texto"><%= h cita.text %></div>
+		<div class="autor">(<%= h cita.author %>)</div>
+		<div class="clear"></div>
+	</div>
+	<div class="botones">
+		<%= link_to 'ver', cita, :class => "cita_btn {4px bottom}" %>
+		<%= link_to 'editar', edit_cita_path(cita), :class => "cita_btn {4px bottom}" %>
+		<%= link_to 'borrar', cita, :confirm => '¿seguro?', :method => :delete, :class => "cita_btn {4px bottom}" %>
+	</div>
+	
+<% end %>
+
+<p>
+	<%= will_paginate(@citas) %>
+</p>
+
+

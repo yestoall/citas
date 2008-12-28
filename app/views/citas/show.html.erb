@@ -1,0 +1,15 @@
+<% title "Cita" %>
+
+<div style="clear:both"></div>
+
+<div class="cita_listado {top bottom-left}">
+	<div class="texto"><%= h @cita.text %></div>
+	<div class="autor">(<%= h @cita.author %>)</div>
+	<div class="tags"><%= h @cita.tag_list %></div>
+	<div class="subida_por">Subida por: <%= h @autor %></div>
+	<div class="clear"></div>
+</div>
+<div class="botones">
+	<%= link_to 'editar', edit_cita_path(@cita), :class => "cita_btn {bottom}" %>
+	<%= link_to 'borrar', @cita, :confirm => '¿seguro?', :method => :delete, :class => "cita_btn {bottom}" %>
+</div>

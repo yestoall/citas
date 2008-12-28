@@ -1,0 +1,36 @@
+<% title "Editar usuario" %>
+<div class="clear"></div>
+
+<%= error_messages_for :user %>
+
+<% form_for @user do |f| -%>
+	<p>
+		<label for="login">Login</label><br />
+		<%= f.text_field :login, :class => "login" %>
+	</p>
+	
+	<p>
+		<label for="email">Email</label><br />
+		<%= f.text_field :email, :class => "login" %>
+	</p>
+	
+	<p>
+		<label for="password">Password</label><br />
+		<%= f.password_field :password, :class => "login" %>
+	</p>
+	
+	<p>
+		<label for="password_confirmation">Password (confirmación)</label><br />
+		<%= f.password_field :password_confirmation, :class => "login" %>
+	</p>
+	
+	<p>
+		<label for="admin">Administrador:</label>
+		<%= f.check_box :admin %>
+	</p>
+	
+	<p>
+		<%= submit_tag "actualizar" %>
+	</p>
+	
+<% end -%>

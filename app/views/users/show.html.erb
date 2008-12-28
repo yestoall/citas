@@ -1,0 +1,17 @@
+<% title "Ver usuario" %>
+<div class="clear"></div>
+
+<p>
+	<strong><%= h @user.login %></strong> | <%= h @user.email %>
+</p>
+
+<p>
+	Ha subido <strong><%= @user_citas_count %></strong> citas
+</p>
+
+<div class="botones-bar">
+	<%= link_to "« volver", users_path, :class => "rounded {4px}" %>
+	<%= link_to "editar", edit_user_path(@user), :class => "rounded {4px}" %>
+</div>
+
+
